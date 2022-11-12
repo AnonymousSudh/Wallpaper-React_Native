@@ -4,16 +4,16 @@
 This is a Wallpaper App made by using React Native. This app uses a image API provided by unsplash.
 ## Home Page
 
-![App Screenshot](https://firebasestorage.googleapis.com/v0/b/upload-dae22.appspot.com/o/Wallpaper%2Fhome.png?alt=media&token=90956430-5ebe-41f3-a11f-119a27427805)
+![App Screenshot](https://firebasestorage.googleapis.com/v0/b/upload-dae22.appspot.com/o/Wallpaper%2Fhome%20(3).png?alt=media&token=0567a085-72c3-495a-bc0f-d53ae29f9931)
 
 
 ## Searching by value
 
-![App Screenshot](https://firebasestorage.googleapis.com/v0/b/upload-dae22.appspot.com/o/Wallpaper%2Fsearch%20string.png?alt=media&token=d00e3fc1-8fa1-4ad1-8469-bf643a39fb27)
+![App Screenshot](https://firebasestorage.googleapis.com/v0/b/upload-dae22.appspot.com/o/Wallpaper%2Fsearch%20string%20(1).png?alt=media&token=c4aeabf3-e17b-42cb-8bb5-bb323efdcb93)
 
 ## Download Page
 
-![App Screenshot](https://firebasestorage.googleapis.com/v0/b/upload-dae22.appspot.com/o/Wallpaper%2FBrief%20View.png?alt=media&token=4caff3a4-8395-4c8e-8c9f-b4a4252ddbe3)
+![App Screenshot](https://firebasestorage.googleapis.com/v0/b/upload-dae22.appspot.com/o/Wallpaper%2FBrief%20View%20(1).png?alt=media&token=7d9721c3-e7ba-4dc6-a301-0a19f9be7e1e)
 
 
 ## Development setup
