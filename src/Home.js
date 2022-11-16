@@ -1,5 +1,7 @@
-import { StyleSheet, Text, View, TextInput, Button, FlatList, Image, ViewBase, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TextInput, Button, FlatList, Image, ViewBase, TouchableOpacity, Dimensions} from 'react-native'
 import React, { useEffect, useState } from 'react'
+const width = Dimensions.get('window').width
+const height = Dimensions.get('window').height
 
 
 
@@ -8,17 +10,20 @@ const Home = ({ navigation }) => {
     const [image, setImage] = useState({});
     const [text, setText] = useState("");
     const [test, setTest] = useState([]);
+    // const [width,setWidth] = useState("");
+    // const [height,setHeight] = useState("");
 
 
 
     const getValue = async (searchString) => {
         const randomValue = Math.floor(Math.random() * 10) + 1;
 
-        const data = await fetch(`https://api.unsplash.com/search/photos?page=${randomValue}&per_page=50&orientation=portrait&query=${searchString}&client_id=yJ3bmN3AsXCNBXz5LzfvM0Lb20w1v-DgWK8x6q1VqYo`);
+        // const data = await fetch(`https://api.unsplash.com/search/photos?page=${randomValue}&per_page=50&orientation=portrait&query=${searchString}&client_id=yJ3bmN3AsXCNBXz5LzfvM0Lb20w1v-DgWK8x6q1VqYo`);
 
 
         // const data = await fetch(`https://api.unsplash.com/search/photos?page=${randomValue}&per_page=50&orientation=portrait&query=${searchString}&client_id=DeU-AwrYRKFKdMXuC2HCh8FueP9LnAAlAS75CygNiwg`);
-        // const data = await fetch(`https://api.unsplash.com/search/photos?page=${randomValue}&per_page=50&orientation=portrait&query=${searchString}&client_id=qW86BwhkMiVdODI97kW-ixVx1pwWnvRAXs5QKw9xi_M`);
+
+        const data = await fetch(`https://api.unsplash.com/search/photos?page=${randomValue}&per_page=50&orientation=portrait&query=${searchString}&client_id=qW86BwhkMiVdODI97kW-ixVx1pwWnvRAXs5QKw9xi_M`);
 
         let apiData = await data.json()
         setImage(apiData)
@@ -37,6 +42,11 @@ const Home = ({ navigation }) => {
     useEffect(() => {
 
         getValue('car');
+        console.log(Dimensions.get('window').width)
+        // height = Dimensions.get('window').width;
+        // setWidth(Dimensions.get('window').width)
+        // console.log(height);
+        // console.log(width);
 
     }, [])
 
@@ -53,7 +63,7 @@ const Home = ({ navigation }) => {
                     }}
                 />
                 <TouchableOpacity
-                    onPress={() => {``
+                    onPress={() => {
                         newSearch()
                     }}>
                     <Image
@@ -77,7 +87,7 @@ const Home = ({ navigation }) => {
                                 }}>
 
                                 <Image
-                                    style={styles.oneImage}
+                                    style={[{width:((width/2)-12),height:height/2.5},styles.oneImage]}
                                     source={{
                                         uri: item.urls.small
                                     }} />
@@ -96,22 +106,24 @@ export default Home
 const styles = StyleSheet.create({
     TextSec: {
 
-        // height: "20%",
+        // height: "10%",
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-around",
-        borderColor: "black",
-        borderWidth: 1,
+        // borderColor: "black",
+        alignSelf: "center",
+        // borderWidth: 1,
         backgroundColor: "white",
-        minWidth: "100%",
+        maxWidth: "95%",
+        borderRadius: 40,
         paddingHorizontal: 10
 
     },
     TextBox: {
-        borderColor: "white",
+        // borderColor: "white",
 
-        borderWidth: 1,
+        // borderWidth: 1,
         width: "90%",
 
     },
@@ -120,39 +132,45 @@ const styles = StyleSheet.create({
         // height: "100%"
     },
     WallpaperSection: {
-        borderColor: "green",
-        // borderWidth: 10,
-        // height: "90%"
+        // borderWidth: 3,
+        // borderColor: "red",
         display: "flex",
         alignItems: "center",
-        // marginBottom:30
+        // minHeight: "5%",
+        // alignSelf:'flex-start'
+        // marginBottom:175
         // marginHorizontal:20
-        marginVertical: 20
+        // marginVertical: 20
+        marginBottom:100
+        
     },
     Flatlist: {
         // borderWidth: 3,
+        // borderColor: "green",
 
 
-        //  minWidth:"100%"
+        // maxWidth: "100%"
         // minHeight: "90%"
 
     },
     imageContainer: {
-        borderColor: "red",
-        // borderWidth: 3,
-        // minWidth: "50%",
-        // display: "flex",
-        // justifyContent: "center",
-        // alignItems: "center",
-        marginVertical: 10,
-        marginHorizontal: 6
+        //   borderWidth: 3,
+        // borderColor: "green",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        alignSelf:"center",
+        // marginVertical: 10,
+        marginHorizontal: 6,
+        // paddingHorizontal:50,
+        // paddingVertical: 10
 
         // minHeight: "90%"
     },
     oneImage: {
-        width: 190,
-        height: 290,
-        borderRadius: 20
+        // width: 177,
+        // height: 290,
+        borderRadius: 24,
         // width: "30%",
         // height: "100%",
         // resizeMode: "contain",
